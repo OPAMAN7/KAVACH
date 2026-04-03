@@ -8,8 +8,11 @@ import { HistoryLogView } from './components/HistoryLog';
 import { ThreatReports } from './components/ThreatReports';
 import { NLPSearch } from './components/NLPSearch';
 import { SocialSearch } from './components/SocialSearch';
+<<<<<<< HEAD
 import { HiddenData } from './components/HiddenData';
 import { SpiderFoot } from './components/SpiderFoot';
+=======
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
 import { PinModal } from './components/PinModal';
 import { SettingsModal } from './components/SettingsModal';
 import { AlertOctagon } from 'lucide-react';
@@ -17,7 +20,11 @@ import { AlertOctagon } from 'lucide-react';
 const App: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
   // Security & Config State
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [showPinModal, setShowPinModal] = useState(false);
@@ -44,18 +51,22 @@ const App: React.FC = () => {
       case 'reports':
         if (isUnlocked) return <ThreatReports />;
         return <RestrictedAccess />;
+<<<<<<< HEAD
       case 'hidden-data':
         if (isUnlocked) return <HiddenData />;
         return <RestrictedAccess />;
       case 'spiderfoot':
         if (isUnlocked) return <SpiderFoot />;
         return <RestrictedAccess />;
+=======
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
       default:
         return <DashboardOverview />;
     }
   };
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen" style={{ backgroundColor: '#f5f5f0', color: '#111111', fontFamily: 'Inter, sans-serif' }}>
       <Header toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
@@ -65,12 +76,24 @@ const App: React.FC = () => {
         setActiveTab={(tab) => {
           setActiveTab(tab);
           setSidebarOpen(false);
+=======
+    <div className="min-h-screen bg-cyber-900 text-slate-200 font-sans selection:bg-cyber-accent selection:text-cyber-900">
+      <Header toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+      
+      <Sidebar 
+        isOpen={sidebarOpen} 
+        activeTab={activeTab} 
+        setActiveTab={(tab) => {
+            setActiveTab(tab);
+            setSidebarOpen(false); 
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
         }}
         onAdminClick={() => !isUnlocked && setShowPinModal(true)}
         onSettingsClick={() => setShowSettingsModal(true)}
         isUnlocked={isUnlocked}
       />
 
+<<<<<<< HEAD
       <PinModal
         isOpen={showPinModal}
         onClose={() => setShowPinModal(false)}
@@ -85,6 +108,22 @@ const App: React.FC = () => {
       <main className={`pt-20 px-5 pb-8 transition-all duration-300 lg:ml-64 min-h-screen`}>
         <div className="max-w-7xl mx-auto h-full">
           {renderContent()}
+=======
+      <PinModal 
+        isOpen={showPinModal} 
+        onClose={() => setShowPinModal(false)} 
+        onUnlock={() => setIsUnlocked(true)} 
+      />
+
+      <SettingsModal 
+        isOpen={showSettingsModal} 
+        onClose={() => setShowSettingsModal(false)} 
+      />
+
+      <main className={`pt-20 px-4 pb-6 transition-all duration-300 lg:ml-64 min-h-screen`}>
+        <div className="max-w-7xl mx-auto h-full">
+            {renderContent()}
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
         </div>
       </main>
     </div>
@@ -92,6 +131,7 @@ const App: React.FC = () => {
 };
 
 const RestrictedAccess = () => (
+<<<<<<< HEAD
   <div className="flex flex-col items-center justify-center h-[70vh] border-2 border-dashed border-[#e8e6e0] rounded-2xl bg-white">
     <div className="p-5 bg-[#fef2f2] rounded-full mb-5 border border-[#fecaca]">
       <AlertOctagon className="w-12 h-12 text-[#dc2626]" />
@@ -104,6 +144,16 @@ const RestrictedAccess = () => (
       Error Code: ENT_AUTH_REQUIRED
     </div>
   </div>
+=======
+    <div className="flex flex-col items-center justify-center h-[70vh] text-cyber-500 border-2 border-dashed border-cyber-800 rounded-lg">
+        <div className="p-6 bg-cyber-900/50 rounded-full mb-6">
+            <AlertOctagon className="w-16 h-16 text-cyber-danger opacity-80" />
+        </div>
+        <h2 className="text-3xl font-bold mb-3 text-white">Restricted Access</h2>
+        <p className="max-w-md text-center mb-6">This intelligence module is locked to Enterprise users only. Please authenticate via the Admin Panel to access this data.</p>
+        <div className="px-4 py-2 bg-cyber-800 rounded text-sm font-mono text-cyber-400">Error Code: ENT_AUTH_REQUIRED</div>
+    </div>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
 );
 
 export default App;

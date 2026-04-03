@@ -73,7 +73,11 @@ export const LeakMonitor: React.FC = () => {
         const score = Math.min(100, 80 + (malicious * 5)); 
         return { 
             score, 
+<<<<<<< HEAD
             color: 'text-[#dc2626]', 
+=======
+            color: 'text-cyber-danger', 
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
             label: 'CRITICAL RISK',
             desc: 'Malicious activity detected by security vendors.'
         };
@@ -87,7 +91,11 @@ export const LeakMonitor: React.FC = () => {
         const score = Math.floor(40 + (ratio * 40));
         return { 
             score, 
+<<<<<<< HEAD
             color: 'text-[#d97706]', 
+=======
+            color: 'text-cyber-warning', 
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
             label: 'SUSPICIOUS',
             desc: 'High level of suspicious activity reported.'
         };
@@ -101,7 +109,11 @@ export const LeakMonitor: React.FC = () => {
         const score = Math.floor(15 + (ratio * 25));
         return { 
             score, 
+<<<<<<< HEAD
             color: 'text-[#666]', // Grey/Blue
+=======
+            color: 'text-cyber-400', // Grey/Blue
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
             label: 'UNCERTAIN',
             desc: 'Not enough data or unrated by most vendors.'
         };
@@ -114,7 +126,11 @@ export const LeakMonitor: React.FC = () => {
     const score = Math.floor(Math.max(0, 15 - (ratio * 15)));
     return { 
         score, 
+<<<<<<< HEAD
         color: 'text-[#16a34a]', 
+=======
+        color: 'text-cyber-success', 
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
         label: 'CLEAN',
         desc: 'Domain is rated safe by most vendors.'
     };
@@ -225,14 +241,22 @@ export const LeakMonitor: React.FC = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="space-y-5">
       <div className="bg-[#f5f5f0] border border-[#d4d0c8] rounded-lg p-6 shadow-lg">
         <h2 className="text-2xl font-bold text-[#111] mb-6 flex items-center gap-2">
           <Database className="text-[#e8521a]" />
+=======
+    <div className="space-y-6">
+      <div className="bg-cyber-800 border border-cyber-600 rounded-lg p-6 shadow-lg">
+        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+          <Database className="text-cyber-accent" />
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
           LEAK MONITOR & INTEL
         </h2>
 
         {/* Tabs */}
+<<<<<<< HEAD
         <div className="flex gap-4 border-b border-[#e8e6e0] mb-6 overflow-x-auto">
           <button onClick={() => setActiveTab('email')} className={`pb-3 px-4 font-medium text-sm transition-colors whitespace-nowrap relative ${activeTab === 'email' ? 'text-[#e8521a]' : 'text-[#666] hover:text-[#111]'}`}>
             Email Intelligence
@@ -253,6 +277,28 @@ export const LeakMonitor: React.FC = () => {
           <button onClick={() => setActiveTab('password')} className={`pb-3 px-4 font-medium text-sm transition-colors whitespace-nowrap relative ${activeTab === 'password' ? 'text-[#e8521a]' : 'text-[#666] hover:text-[#111]'}`}>
             Password Audit
             {activeTab === 'password' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#e8521a]"></span>}
+=======
+        <div className="flex gap-4 border-b border-cyber-700 mb-6 overflow-x-auto">
+          <button onClick={() => setActiveTab('email')} className={`pb-3 px-4 font-medium text-sm transition-colors whitespace-nowrap relative ${activeTab === 'email' ? 'text-cyber-accent' : 'text-cyber-400 hover:text-white'}`}>
+            Email Intelligence
+            {activeTab === 'email' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyber-accent"></span>}
+          </button>
+          <button onClick={() => setActiveTab('person')} className={`pb-3 px-4 font-medium text-sm transition-colors whitespace-nowrap relative ${activeTab === 'person' ? 'text-cyber-accent' : 'text-cyber-400 hover:text-white'}`}>
+            Person Finder
+            {activeTab === 'person' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyber-accent"></span>}
+          </button>
+           <button onClick={() => setActiveTab('domain')} className={`pb-3 px-4 font-medium text-sm transition-colors whitespace-nowrap relative ${activeTab === 'domain' ? 'text-cyber-accent' : 'text-cyber-400 hover:text-white'}`}>
+            Domain Intel (Company)
+            {activeTab === 'domain' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyber-accent"></span>}
+          </button>
+          <button onClick={() => setActiveTab('social')} className={`pb-3 px-4 font-medium text-sm transition-colors whitespace-nowrap relative ${activeTab === 'social' ? 'text-cyber-accent' : 'text-cyber-400 hover:text-white'}`}>
+            Social OSINT
+            {activeTab === 'social' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyber-accent"></span>}
+          </button>
+          <button onClick={() => setActiveTab('password')} className={`pb-3 px-4 font-medium text-sm transition-colors whitespace-nowrap relative ${activeTab === 'password' ? 'text-cyber-accent' : 'text-cyber-400 hover:text-white'}`}>
+            Password Audit
+            {activeTab === 'password' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyber-accent"></span>}
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
           </button>
         </div>
 
@@ -262,8 +308,13 @@ export const LeakMonitor: React.FC = () => {
           {activeTab === 'email' && (
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
               <form onSubmit={handleEmailCheck} className="flex gap-4 mb-8">
+<<<<<<< HEAD
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email to scan breaches and verify..." className="flex-1 bg-[#f5f5f0] border border-[#e8e6e0] rounded-xl px-4 py-2.5 text-[#111] placeholder-[#bbb] focus:border-[#e8521a] focus:outline-none focus:bg-white transition-all text-sm" />
                 <button type="submit" disabled={emailLoading} className="bg-[#e8521a] hover:bg-[#c73f0a] text-[#111] px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50">
+=======
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email to scan breaches and verify..." className="flex-1 bg-cyber-900 border border-cyber-700 rounded px-4 py-2 text-white focus:border-cyber-accent focus:outline-none" />
+                <button type="submit" disabled={emailLoading} className="bg-cyber-600 hover:bg-cyber-500 text-white px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                   {emailLoading ? <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div> : <Search className="w-4 h-4" />}
                   FULL SCAN
                 </button>
@@ -273,6 +324,7 @@ export const LeakMonitor: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="lg:col-span-1 space-y-4">
                         {hunterVerify && (
+<<<<<<< HEAD
                             <div className="bg-white border border-[#d4d0c8] rounded p-4 h-full">
                                 <h3 className="text-[#e8521a] font-bold mb-3 flex items-center gap-2">
                                     <UserCheck className="w-4 h-4" />
@@ -285,20 +337,42 @@ export const LeakMonitor: React.FC = () => {
                                     </div>
                                     <div className={`mt-2 inline-block px-3 py-1 rounded-full text-xs font-bold uppercase ${
                                         hunterVerify.status === 'valid' ? 'bg-[#f0fdf4] text-[#16a34a]' : 'bg-[#dc2626]/20 text-[#dc2626]'
+=======
+                            <div className="bg-cyber-900 border border-cyber-600 rounded p-4 h-full">
+                                <h3 className="text-cyber-accent font-bold mb-3 flex items-center gap-2">
+                                    <UserCheck className="w-4 h-4" />
+                                    VALIDATION STATUS
+                                </h3>
+                                <div className="text-center py-4 border-b border-cyber-800 mb-4">
+                                    <div className="text-sm text-cyber-400 uppercase tracking-widest mb-1">Deliverability</div>
+                                    <div className={`text-4xl font-mono font-bold ${hunterVerify.score > 80 ? 'text-cyber-success' : hunterVerify.score > 50 ? 'text-cyber-warning' : 'text-cyber-danger'}`}>
+                                        {hunterVerify.score}/100
+                                    </div>
+                                    <div className={`mt-2 inline-block px-3 py-1 rounded-full text-xs font-bold uppercase ${
+                                        hunterVerify.status === 'valid' ? 'bg-cyber-success/20 text-cyber-success' : 'bg-cyber-danger/20 text-cyber-danger'
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                     }`}>
                                         {hunterVerify.status}
                                     </div>
                                 </div>
                                 <div className="space-y-2 text-sm">
+<<<<<<< HEAD
                                     <div className="flex justify-between"><span className="text-[#666]">MX Records</span><span className={hunterVerify.mx_records ? 'text-[#16a34a]' : 'text-[#dc2626]'}>{hunterVerify.mx_records ? 'VALID' : 'INVALID'}</span></div>
                                     <div className="flex justify-between"><span className="text-[#666]">SMTP Server</span><span className={hunterVerify.smtp_server ? 'text-[#16a34a]' : 'text-[#dc2626]'}>{hunterVerify.smtp_server ? 'ACTIVE' : 'DOWN'}</span></div>
                                     <div className="flex justify-between"><span className="text-[#666]">Disposable</span><span className={hunterVerify.disposable ? 'text-[#dc2626]' : 'text-[#16a34a]'}>{hunterVerify.disposable ? 'YES' : 'NO'}</span></div>
                                      <div className="flex justify-between"><span className="text-[#666]">Accept All</span><span className="text-[#111]">{hunterVerify.accept_all ? 'YES' : 'NO'}</span></div>
+=======
+                                    <div className="flex justify-between"><span className="text-cyber-400">MX Records</span><span className={hunterVerify.mx_records ? 'text-cyber-success' : 'text-cyber-danger'}>{hunterVerify.mx_records ? 'VALID' : 'INVALID'}</span></div>
+                                    <div className="flex justify-between"><span className="text-cyber-400">SMTP Server</span><span className={hunterVerify.smtp_server ? 'text-cyber-success' : 'text-cyber-danger'}>{hunterVerify.smtp_server ? 'ACTIVE' : 'DOWN'}</span></div>
+                                    <div className="flex justify-between"><span className="text-cyber-400">Disposable</span><span className={hunterVerify.disposable ? 'text-cyber-danger' : 'text-cyber-success'}>{hunterVerify.disposable ? 'YES' : 'NO'}</span></div>
+                                     <div className="flex justify-between"><span className="text-cyber-400">Accept All</span><span className="text-white">{hunterVerify.accept_all ? 'YES' : 'NO'}</span></div>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                 </div>
                             </div>
                         )}
                     </div>
                     <div className="lg:col-span-2 space-y-4">
+<<<<<<< HEAD
                         <div className="bg-white border border-[#d4d0c8] rounded p-4 h-full">
                              <h3 className="text-[#dc2626] font-bold mb-3 flex items-center gap-2"><AlertTriangle className="w-4 h-4" />BREACH DATA</h3>
                             {breaches && breaches.length > 0 ? (
@@ -312,11 +386,30 @@ export const LeakMonitor: React.FC = () => {
                                         </div>
                                         <p className="text-sm text-[#333] mb-3 line-clamp-2" dangerouslySetInnerHTML={{__html: breach.Description}}></p>
                                         <div className="flex flex-wrap gap-2">{breach.DataClasses.map((dc, i) => (<span key={i} className="text-[10px] bg-white text-[#e8521a] px-2 py-1 rounded border border-[#e8e6e0]">{dc}</span>))}</div>
+=======
+                        <div className="bg-cyber-900 border border-cyber-600 rounded p-4 h-full">
+                             <h3 className="text-cyber-danger font-bold mb-3 flex items-center gap-2"><AlertTriangle className="w-4 h-4" />BREACH DATA</h3>
+                            {breaches && breaches.length > 0 ? (
+                                <div className="space-y-3">
+                                    <div className="bg-cyber-danger/10 border border-cyber-danger rounded p-3 text-sm text-cyber-danger font-bold">Found in {breaches.length} data breaches.</div>
+                                    {breaches.map((breach, idx) => (
+                                    <div key={idx} className="bg-cyber-800 border border-cyber-700 p-4 rounded hover:border-cyber-500 transition-colors">
+                                        <div className="flex justify-between items-start mb-2">
+                                            <div><h4 className="font-bold text-white text-md">{breach.Title}</h4><span className="text-xs text-cyber-500 bg-cyber-950 px-2 py-0.5 rounded ml-2 border border-cyber-800">{breach.Source || 'Unknown Source'}</span></div>
+                                            <span className="text-xs font-mono text-cyber-400">{breach.BreachDate}</span>
+                                        </div>
+                                        <p className="text-sm text-cyber-300 mb-3 line-clamp-2" dangerouslySetInnerHTML={{__html: breach.Description}}></p>
+                                        <div className="flex flex-wrap gap-2">{breach.DataClasses.map((dc, i) => (<span key={i} className="text-[10px] bg-cyber-900 text-cyber-accent px-2 py-1 rounded border border-cyber-700">{dc}</span>))}</div>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                     </div>
                                     ))}
                                 </div>
                             ) : (
+<<<<<<< HEAD
                                 <div className="text-center py-8"><CheckCircle className="w-10 h-10 text-[#16a34a] mx-auto mb-3" /><p className="text-[#333]">No breaches found.</p></div>
+=======
+                                <div className="text-center py-8"><CheckCircle className="w-10 h-10 text-cyber-success mx-auto mb-3" /><p className="text-cyber-300">No breaches found.</p></div>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                             )}
                         </div>
                     </div>
@@ -324,6 +417,7 @@ export const LeakMonitor: React.FC = () => {
                     {/* ORGANIZATION INTELLIGENCE SECTION */}
                     {orgIntel && (
                       <div className="lg:col-span-3 animate-in fade-in slide-in-from-top-4 duration-500">
+<<<<<<< HEAD
                         <div className="bg-white border border-[#fbd5c0] rounded-lg p-6 shadow-sm">
                           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                             <div>
@@ -336,11 +430,29 @@ export const LeakMonitor: React.FC = () => {
                             <div className="flex gap-3">
                               {orgIntel.website && (
                                 <a href={orgIntel.website.startsWith('http') ? orgIntel.website : `https://${orgIntel.website}`} target="_blank" rel="noopener noreferrer" className="bg-[#f5f5f0] hover:bg-[#e8e6e0] p-2 rounded border border-[#d4d0c8] transition-colors text-[#e8521a]" title="Website">
+=======
+                        <div className="bg-cyber-900 border border-cyber-accent/30 rounded-lg p-6 shadow-[0_0_15px_rgba(0,255,255,0.1)]">
+                          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                            <div>
+                              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                                <Building className="text-cyber-accent" />
+                                {orgIntel.name.toUpperCase()}
+                              </h3>
+                              <p className="text-cyber-400 text-sm mt-1">{orgIntel.description}</p>
+                            </div>
+                            <div className="flex gap-3">
+                              {orgIntel.website && (
+                                <a href={orgIntel.website.startsWith('http') ? orgIntel.website : `https://${orgIntel.website}`} target="_blank" rel="noopener noreferrer" className="bg-cyber-800 hover:bg-cyber-700 p-2 rounded border border-cyber-600 transition-colors text-cyber-accent" title="Website">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                   <Globe className="w-5 h-5" />
                                 </a>
                               )}
                               {orgIntel.linkedin && (
+<<<<<<< HEAD
                                 <a href={orgIntel.linkedin} target="_blank" rel="noopener noreferrer" className="bg-[#f5f5f0] hover:bg-[#e8e6e0] p-2 rounded border border-[#d4d0c8] transition-colors text-[#e8521a]" title="LinkedIn">
+=======
+                                <a href={orgIntel.linkedin} target="_blank" rel="noopener noreferrer" className="bg-cyber-800 hover:bg-cyber-700 p-2 rounded border border-cyber-600 transition-colors text-cyber-accent" title="LinkedIn">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                   <Linkedin className="w-5 h-5" />
                                 </a>
                               )}
@@ -349,24 +461,42 @@ export const LeakMonitor: React.FC = () => {
 
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {/* Main Person */}
+<<<<<<< HEAD
                             <div className="bg-[#f8f7f4] border border-[#e8e6e0] p-4 rounded">
                               <h4 className="text-[#e8521a] font-bold text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
+=======
+                            <div className="bg-cyber-800/50 border border-cyber-700 p-4 rounded">
+                              <h4 className="text-cyber-accent font-bold text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                 <User className="w-3 h-3" />
                                 Main Person in Charge
                               </h4>
                               <div className="flex justify-between items-center">
                                 <div>
+<<<<<<< HEAD
                                   <div className="text-[#111] font-bold">{orgIntel.mainPerson.name}</div>
                                   <div className="text-[#666] text-xs">{orgIntel.mainPerson.title}</div>
                                 </div>
                                 <div className="flex items-center gap-2">
                                   {orgIntel.mainPerson.website && (
                                     <a href={orgIntel.mainPerson.website.startsWith('http') ? orgIntel.mainPerson.website : `https://${orgIntel.mainPerson.website}`} target="_blank" rel="noopener noreferrer" className="text-[#e8521a] hover:text-[#111] transition-colors">
+=======
+                                  <div className="text-white font-bold">{orgIntel.mainPerson.name}</div>
+                                  <div className="text-cyber-400 text-xs">{orgIntel.mainPerson.title}</div>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  {orgIntel.mainPerson.website && (
+                                    <a href={orgIntel.mainPerson.website.startsWith('http') ? orgIntel.mainPerson.website : `https://${orgIntel.mainPerson.website}`} target="_blank" rel="noopener noreferrer" className="text-cyber-accent hover:text-white transition-colors">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                       <Globe className="w-4 h-4" />
                                     </a>
                                   )}
                                   {orgIntel.mainPerson.linkedin && (
+<<<<<<< HEAD
                                     <a href={orgIntel.mainPerson.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#e8521a] hover:text-[#111] transition-colors">
+=======
+                                    <a href={orgIntel.mainPerson.linkedin} target="_blank" rel="noopener noreferrer" className="text-cyber-accent hover:text-white transition-colors">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                       <Linkedin className="w-4 h-4" />
                                     </a>
                                   )}
@@ -375,13 +505,19 @@ export const LeakMonitor: React.FC = () => {
                             </div>
 
                             {/* Authorities */}
+<<<<<<< HEAD
                             <div className="bg-[#f8f7f4] border border-[#e8e6e0] p-4 rounded">
                               <h4 className="text-[#e8521a] font-bold text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
+=======
+                            <div className="bg-cyber-800/50 border border-cyber-700 p-4 rounded">
+                              <h4 className="text-cyber-accent font-bold text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                 <Shield className="w-3 h-3" />
                                 Leadership & Authorities
                               </h4>
                               <div className="space-y-3">
                                 {orgIntel.authorities.map((auth, i) => (
+<<<<<<< HEAD
                                   <div key={i} className="flex justify-between items-center border-b border-[#e8e6e0] pb-2 last:border-0 last:pb-0">
                                     <div>
                                       <div className="text-[#111] text-sm font-medium">{auth.name}</div>
@@ -390,11 +526,25 @@ export const LeakMonitor: React.FC = () => {
                                     <div className="flex items-center gap-2">
                                       {auth.website && (
                                         <a href={auth.website.startsWith('http') ? auth.website : `https://${auth.website}`} target="_blank" rel="noopener noreferrer" className="text-[#e8521a] hover:text-[#111] transition-colors">
+=======
+                                  <div key={i} className="flex justify-between items-center border-b border-cyber-700/50 pb-2 last:border-0 last:pb-0">
+                                    <div>
+                                      <div className="text-white text-sm font-medium">{auth.name}</div>
+                                      <div className="text-cyber-500 text-[10px]">{auth.title}</div>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                      {auth.website && (
+                                        <a href={auth.website.startsWith('http') ? auth.website : `https://${auth.website}`} target="_blank" rel="noopener noreferrer" className="text-cyber-accent hover:text-white transition-colors">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                           <Globe className="w-3 h-3" />
                                         </a>
                                       )}
                                       {auth.linkedin && (
+<<<<<<< HEAD
                                         <a href={auth.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#e8521a] hover:text-[#111] transition-colors">
+=======
+                                        <a href={auth.linkedin} target="_blank" rel="noopener noreferrer" className="text-cyber-accent hover:text-white transition-colors">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                           <Linkedin className="w-3 h-3" />
                                         </a>
                                       )}
@@ -405,18 +555,31 @@ export const LeakMonitor: React.FC = () => {
                             </div>
 
                             {/* People Working */}
+<<<<<<< HEAD
                             <div className="bg-[#f8f7f4] border border-[#e8e6e0] p-4 rounded">
                               <h4 className="text-[#e8521a] font-bold text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
+=======
+                            <div className="bg-cyber-800/50 border border-cyber-700 p-4 rounded">
+                              <h4 className="text-cyber-accent font-bold text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                 <Briefcase className="w-3 h-3" />
                                 Identified Employees
                               </h4>
                               <div className="space-y-3">
                                 {orgIntel.employees.map((emp, i) => (
+<<<<<<< HEAD
                                   <div key={i} className="flex flex-col border-b border-[#e8e6e0] pb-2 last:border-0 last:pb-0">
                                     <div className="text-[#111] text-sm font-medium">{emp.name}</div>
                                     <div className="flex justify-between items-center">
                                       <div className="text-[#888] text-[10px]">{emp.title}</div>
                                       <div className="text-[#e8521a] text-[10px] font-mono">{emp.email}</div>
+=======
+                                  <div key={i} className="flex flex-col border-b border-cyber-700/50 pb-2 last:border-0 last:pb-0">
+                                    <div className="text-white text-sm font-medium">{emp.name}</div>
+                                    <div className="flex justify-between items-center">
+                                      <div className="text-cyber-500 text-[10px]">{emp.title}</div>
+                                      <div className="text-cyber-accent text-[10px] font-mono">{emp.email}</div>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                     </div>
                                   </div>
                                 ))}
@@ -434,6 +597,7 @@ export const LeakMonitor: React.FC = () => {
           {/* PERSON FINDER TAB */}
           {activeTab === 'person' && (
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+<<<<<<< HEAD
                 <div className="bg-[#f8f7f4] border border-[#e8e6e0] rounded p-4 mb-6 text-sm text-[#333]">
                     <User className="inline w-4 h-4 mr-2 text-[#e8521a]" />
                     Enter a target's name and company domain to discover their verified email address and social handles.
@@ -443,11 +607,23 @@ export const LeakMonitor: React.FC = () => {
                      <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Last Name" className="flex-1 bg-[#f5f5f0] border border-[#e8e6e0] rounded-xl px-4 py-2.5 text-[#111] placeholder-[#bbb] focus:border-[#e8521a] focus:outline-none focus:bg-white transition-all text-sm" />
                      <input type="text" value={personDomain} onChange={(e) => setPersonDomain(e.target.value)} placeholder="Company Domain" className="flex-1 bg-[#f5f5f0] border border-[#e8e6e0] rounded-xl px-4 py-2.5 text-[#111] placeholder-[#bbb] focus:border-[#e8521a] focus:outline-none focus:bg-white transition-all text-sm" />
                     <button type="submit" disabled={personLoading} className="bg-[#e8521a] hover:bg-[#c73f0a] text-[#111] px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50 whitespace-nowrap">
+=======
+                <div className="bg-cyber-900/50 border border-cyber-700 rounded p-4 mb-6 text-sm text-cyber-300">
+                    <User className="inline w-4 h-4 mr-2 text-cyber-accent" />
+                    Enter a target's name and company domain to discover their verified email address and social handles.
+                </div>
+                <form onSubmit={handlePersonFind} className="flex flex-col md:flex-row gap-4 mb-8">
+                    <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="First Name" className="flex-1 bg-cyber-900 border border-cyber-700 rounded px-4 py-2 text-white focus:border-cyber-accent focus:outline-none" />
+                     <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Last Name" className="flex-1 bg-cyber-900 border border-cyber-700 rounded px-4 py-2 text-white focus:border-cyber-accent focus:outline-none" />
+                     <input type="text" value={personDomain} onChange={(e) => setPersonDomain(e.target.value)} placeholder="Company Domain" className="flex-1 bg-cyber-900 border border-cyber-700 rounded px-4 py-2 text-white focus:border-cyber-accent focus:outline-none" />
+                    <button type="submit" disabled={personLoading} className="bg-cyber-600 hover:bg-cyber-500 text-white px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50 whitespace-nowrap">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                         {personLoading ? <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div> : <Search className="w-4 h-4" />}
                         FIND PERSON
                     </button>
                 </form>
                 {personResult ? (
+<<<<<<< HEAD
                      <div className="bg-[#f5f5f0] border border-[#d4d0c8] rounded-lg p-6 max-w-2xl mx-auto">
                         <div className="flex items-start justify-between mb-6">
                             <div><h3 className="text-xl font-bold text-[#111] mb-1">{personResult.first_name} {personResult.last_name}</h3><p className="text-[#666]">{personResult.position}</p><p className="text-xs text-[#888] uppercase tracking-widest mt-1">{personResult.company}</p></div>
@@ -462,6 +638,22 @@ export const LeakMonitor: React.FC = () => {
                         </div>
                      </div>
                 ) : (personLoading ? null : (personDomain && firstName && <div className="text-center text-[#666]">No public email found for this profile.</div>))}
+=======
+                     <div className="bg-cyber-800 border border-cyber-600 rounded-lg p-6 max-w-2xl mx-auto">
+                        <div className="flex items-start justify-between mb-6">
+                            <div><h3 className="text-xl font-bold text-white mb-1">{personResult.first_name} {personResult.last_name}</h3><p className="text-cyber-400">{personResult.position}</p><p className="text-xs text-cyber-500 uppercase tracking-widest mt-1">{personResult.company}</p></div>
+                            <div className="text-right"><div className="text-sm text-cyber-400 mb-1">Confidence Score</div><div className={`text-2xl font-bold font-mono ${personResult.score > 80 ? 'text-cyber-success' : 'text-cyber-warning'}`}>{personResult.score}%</div></div>
+                        </div>
+                        <div className="bg-cyber-900 p-4 rounded border border-cyber-700 mb-6 flex items-center justify-between">
+                            <div><span className="text-xs text-cyber-500 uppercase block mb-1">Verified Email</span><span className="text-lg text-cyber-accent font-mono tracking-wide">{personResult.email}</span></div>
+                             <div className="flex gap-2">
+                                {personResult.linkedin && <a href={personResult.linkedin} target="_blank" rel="noreferrer" className="p-2 bg-cyber-800 rounded hover:text-white text-cyber-400 transition-colors"><Linkedin className="w-4 h-4" /></a>}
+                                 {personResult.twitter && <a href={personResult.twitter} target="_blank" rel="noreferrer" className="p-2 bg-cyber-800 rounded hover:text-white text-cyber-400 transition-colors"><Twitter className="w-4 h-4" /></a>}
+                             </div>
+                        </div>
+                     </div>
+                ) : (personLoading ? null : (personDomain && firstName && <div className="text-center text-cyber-400">No public email found for this profile.</div>))}
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
             </div>
           )}
 
@@ -469,37 +661,60 @@ export const LeakMonitor: React.FC = () => {
           {activeTab === 'domain' && (
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
                <form onSubmit={handleDomainCheck} className="flex gap-4 mb-8">
+<<<<<<< HEAD
                 <input type="text" value={domain} onChange={(e) => setDomain(e.target.value)} placeholder="Enter domain (e.g. example.com)..." className="flex-1 bg-[#f5f5f0] border border-[#e8e6e0] rounded-xl px-4 py-2.5 text-[#111] placeholder-[#bbb] focus:border-[#e8521a] focus:outline-none focus:bg-white transition-all text-sm" />
                 <button type="submit" disabled={domainLoading} className="bg-[#e8521a] hover:bg-[#c73f0a] text-[#111] px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50">
+=======
+                <input type="text" value={domain} onChange={(e) => setDomain(e.target.value)} placeholder="Enter domain (e.g. example.com)..." className="flex-1 bg-cyber-900 border border-cyber-700 rounded px-4 py-2 text-white focus:border-cyber-accent focus:outline-none" />
+                <button type="submit" disabled={domainLoading} className="bg-cyber-600 hover:bg-cyber-500 text-white px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                   {domainLoading ? <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div> : <Globe className="w-4 h-4" />}
                   ANALYZE DOMAIN
                 </button>
               </form>
 
               {!domainIntel && !hunterDomain && !domainLoading && (
+<<<<<<< HEAD
                   <div className="text-center text-[#666] py-10">Enter a domain to fetch comprehensive intelligence from VirusTotal and Hunter.io</div>
               )}
 
               {(domainIntel || hunterDomain) && !domainLoading && (
                   <div className="space-y-5">
+=======
+                  <div className="text-center text-cyber-400 py-10">Enter a domain to fetch comprehensive intelligence from VirusTotal and Hunter.io</div>
+              )}
+
+              {(domainIntel || hunterDomain) && !domainLoading && (
+                  <div className="space-y-6">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                      {/* 1. VirusTotal Reputation Section */}
                      {domainIntel && (
                          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                              {/* Reputation Score */}
+<<<<<<< HEAD
                              <div className="bg-white border border-[#e8e6e0] p-6 rounded text-center md:col-span-1">
                                 <div className="text-sm text-[#666] uppercase tracking-widest mb-4 flex items-center justify-center gap-2"><Shield className="w-4 h-4" /> THREAT SCORE</div>
+=======
+                             <div className="bg-cyber-900 border border-cyber-700 p-6 rounded text-center md:col-span-1">
+                                <div className="text-sm text-cyber-400 uppercase tracking-widest mb-4 flex items-center justify-center gap-2"><Shield className="w-4 h-4" /> THREAT SCORE</div>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                 {(() => {
                                     const threat = calculateThreatScore(domainIntel.last_analysis_stats);
                                     return (
                                         <>
                                             <div className={`text-6xl font-mono font-bold mb-2 ${threat.color}`}>{threat.score}</div>
                                             <div className={`text-sm font-bold tracking-widest mb-4 ${threat.color}`}>{threat.label}</div>
+<<<<<<< HEAD
                                             <p className="text-xs text-[#666] mb-4 px-2">{threat.desc}</p>
+=======
+                                            <p className="text-xs text-cyber-400 mb-4 px-2">{threat.desc}</p>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                         </>
                                     );
                                 })()}
                                 
                                 <div className="grid grid-cols-2 gap-2 text-xs">
+<<<<<<< HEAD
                                     <div className="bg-[#f5f5f0] p-2 rounded text-[#dc2626]">Malicious: {domainIntel.last_analysis_stats.malicious}</div>
                                     <div className="bg-[#f5f5f0] p-2 rounded text-[#d97706]">Suspicious: {domainIntel.last_analysis_stats.suspicious}</div>
                                     <div className="bg-[#f5f5f0] p-2 rounded text-[#16a34a]">Harmless: {domainIntel.last_analysis_stats.harmless}</div>
@@ -517,12 +732,32 @@ export const LeakMonitor: React.FC = () => {
                                         <div className="flex flex-col items-center">
                                             <span className="text-[#dc2626] font-bold text-lg">{domainIntel.total_votes.malicious}</span>
                                             <span className="text-[9px] text-[#888] uppercase">Malicious</span>
+=======
+                                    <div className="bg-cyber-800 p-2 rounded text-cyber-danger">Malicious: {domainIntel.last_analysis_stats.malicious}</div>
+                                    <div className="bg-cyber-800 p-2 rounded text-cyber-warning">Suspicious: {domainIntel.last_analysis_stats.suspicious}</div>
+                                    <div className="bg-cyber-800 p-2 rounded text-cyber-success">Harmless: {domainIntel.last_analysis_stats.harmless}</div>
+                                    <div className="bg-cyber-800 p-2 rounded text-cyber-300">Undetected: {domainIntel.last_analysis_stats.undetected}</div>
+                                </div>
+
+                                <div className="mt-4 pt-4 border-t border-cyber-800">
+                                    <div className="text-[10px] text-cyber-500 uppercase tracking-widest mb-2">Community Votes</div>
+                                    <div className="flex justify-between items-center px-2">
+                                        <div className="flex flex-col items-center">
+                                            <span className="text-cyber-success font-bold text-lg">{domainIntel.total_votes.harmless}</span>
+                                            <span className="text-[9px] text-cyber-500 uppercase">Harmless</span>
+                                        </div>
+                                        <div className="h-8 w-[1px] bg-cyber-800"></div>
+                                        <div className="flex flex-col items-center">
+                                            <span className="text-cyber-danger font-bold text-lg">{domainIntel.total_votes.malicious}</span>
+                                            <span className="text-[9px] text-cyber-500 uppercase">Malicious</span>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                         </div>
                                     </div>
                                 </div>
                              </div>
                              
                              {/* Basic Info */}
+<<<<<<< HEAD
                              <div className="bg-white border border-[#e8e6e0] p-6 rounded md:col-span-2">
                                 <h4 className="text-[#e8521a] font-bold mb-4 flex items-center gap-2"><Activity className="w-4 h-4"/> ANALYSIS DETAILS</h4>
                                 <div className="grid grid-cols-2 gap-y-4 gap-x-8 text-sm">
@@ -556,6 +791,41 @@ export const LeakMonitor: React.FC = () => {
                                         <div className="flex flex-wrap gap-2 mt-1">
                                             {domainIntel.tags.map(tag => (
                                                 <span key={tag} className="px-2 py-1 bg-[#f5f5f0] border border-[#e8e6e0] rounded text-xs text-[#e8521a] uppercase">{tag}</span>
+=======
+                             <div className="bg-cyber-900 border border-cyber-700 p-6 rounded md:col-span-2">
+                                <h4 className="text-cyber-accent font-bold mb-4 flex items-center gap-2"><Activity className="w-4 h-4"/> ANALYSIS DETAILS</h4>
+                                <div className="grid grid-cols-2 gap-y-4 gap-x-8 text-sm">
+                                    <div>
+                                        <label className="text-cyber-500 text-xs uppercase block">Registrar</label>
+                                        <span className="text-white">{domainIntel.registrar || 'Unknown'}</span>
+                                    </div>
+                                    <div>
+                                        <label className="text-cyber-500 text-xs uppercase block">Creation Date</label>
+                                        <span className="text-white">{domainIntel.creation_date ? new Date(domainIntel.creation_date * 1000).toLocaleDateString() : 'Unknown'}</span>
+                                    </div>
+                                    <div>
+                                        <label className="text-cyber-500 text-xs uppercase block">Last Update</label>
+                                        <span className="text-white">{domainIntel.last_update_date ? new Date(domainIntel.last_update_date * 1000).toLocaleDateString() : 'Unknown'}</span>
+                                    </div>
+                                    <div>
+                                        <label className="text-cyber-500 text-xs uppercase block">VT Reputation Score</label>
+                                        <span className={`font-mono font-bold ${domainIntel.reputation >= 0 ? 'text-cyber-success' : 'text-cyber-danger'}`}>{domainIntel.reputation}</span>
+                                    </div>
+                                    <div className="col-span-2">
+                                        <label className="text-cyber-500 text-xs uppercase block">Categories</label>
+                                        <div className="flex flex-wrap gap-2 mt-1">
+                                            {Object.entries(domainIntel.categories).slice(0, 5).map(([svc, cat]) => (
+                                                <span key={svc} className="px-2 py-1 bg-cyber-800 border border-cyber-600 rounded text-xs text-cyber-200">{cat}</span>
+                                            ))}
+                                            {Object.keys(domainIntel.categories).length === 0 && <span className="text-cyber-500 italic">No categories tagged</span>}
+                                        </div>
+                                    </div>
+                                     <div className="col-span-2">
+                                        <label className="text-cyber-500 text-xs uppercase block">Tags</label>
+                                        <div className="flex flex-wrap gap-2 mt-1">
+                                            {domainIntel.tags.map(tag => (
+                                                <span key={tag} className="px-2 py-1 bg-cyber-950 border border-cyber-700 rounded text-xs text-cyber-accent uppercase">{tag}</span>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                             ))}
                                         </div>
                                     </div>
@@ -566,6 +836,7 @@ export const LeakMonitor: React.FC = () => {
 
                      {/* SSL/TLS Intelligence */}
                      {domainIntel && (domainIntel.jarm || domainIntel.last_https_certificate) && (
+<<<<<<< HEAD
                          <div className="bg-white border border-[#e8e6e0] p-6 rounded">
                              <h4 className="text-[#e8521a] font-bold mb-4 flex items-center gap-2"><Lock className="w-4 h-4"/> SSL/TLS INTELLIGENCE</h4>
                              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -576,6 +847,18 @@ export const LeakMonitor: React.FC = () => {
                                              {domainIntel.jarm}
                                          </div>
                                          <p className="text-[10px] text-[#888] mt-2">
+=======
+                         <div className="bg-cyber-900 border border-cyber-700 p-6 rounded">
+                             <h4 className="text-cyber-accent font-bold mb-4 flex items-center gap-2"><Lock className="w-4 h-4"/> SSL/TLS INTELLIGENCE</h4>
+                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                 {domainIntel.jarm && (
+                                     <div>
+                                         <label className="text-cyber-500 text-xs uppercase block mb-1">JARM Fingerprint</label>
+                                         <div className="bg-cyber-950 p-3 rounded border border-cyber-800 font-mono text-[10px] text-cyber-accent break-all leading-relaxed">
+                                             {domainIntel.jarm}
+                                         </div>
+                                         <p className="text-[10px] text-cyber-500 mt-2">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                              Active fingerprinting of the TLS server stack. Used to identify malicious servers even if they change IPs.
                                          </p>
                                      </div>
@@ -583,6 +866,7 @@ export const LeakMonitor: React.FC = () => {
                                  {domainIntel.last_https_certificate && (
                                      <div className="space-y-3">
                                          <div>
+<<<<<<< HEAD
                                              <label className="text-[#888] text-xs uppercase block">Certificate Issuer</label>
                                              <span className="text-[#111] text-sm">{domainIntel.last_https_certificate.issuer?.O || domainIntel.last_https_certificate.issuer?.CN || 'Unknown'}</span>
                                          </div>
@@ -604,6 +888,29 @@ export const LeakMonitor: React.FC = () => {
                                                  ))}
                                                  {(domainIntel.last_https_certificate.extensions?.subject_alternative_name?.length > 5) && (
                                                      <span className="text-[9px] text-[#aaa]">+{domainIntel.last_https_certificate.extensions.subject_alternative_name.length - 5} more</span>
+=======
+                                             <label className="text-cyber-500 text-xs uppercase block">Certificate Issuer</label>
+                                             <span className="text-white text-sm">{domainIntel.last_https_certificate.issuer?.O || domainIntel.last_https_certificate.issuer?.CN || 'Unknown'}</span>
+                                         </div>
+                                         <div className="grid grid-cols-2 gap-4">
+                                             <div>
+                                                 <label className="text-cyber-500 text-xs uppercase block">Valid From</label>
+                                                 <span className="text-cyber-300 text-xs">{domainIntel.last_https_certificate.validity?.not_before || 'N/A'}</span>
+                                             </div>
+                                             <div>
+                                                 <label className="text-cyber-500 text-xs uppercase block">Valid Until</label>
+                                                 <span className="text-cyber-300 text-xs">{domainIntel.last_https_certificate.validity?.not_after || 'N/A'}</span>
+                                             </div>
+                                         </div>
+                                         <div>
+                                             <label className="text-cyber-500 text-xs uppercase block">Subject Alternative Names</label>
+                                             <div className="flex flex-wrap gap-1 mt-1">
+                                                 {domainIntel.last_https_certificate.extensions?.subject_alternative_name?.slice(0, 5).map((name: string) => (
+                                                     <span key={name} className="text-[9px] px-1.5 py-0.5 bg-cyber-800 rounded text-cyber-400">{name}</span>
+                                                 ))}
+                                                 {(domainIntel.last_https_certificate.extensions?.subject_alternative_name?.length > 5) && (
+                                                     <span className="text-[9px] text-cyber-600">+{domainIntel.last_https_certificate.extensions.subject_alternative_name.length - 5} more</span>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                                  )}
                                              </div>
                                          </div>
@@ -615,27 +922,47 @@ export const LeakMonitor: React.FC = () => {
 
                       {/* Security Vendor Detections */}
                       {domainIntel && domainIntel.raw_data?.data?.attributes?.last_analysis_results && (
+<<<<<<< HEAD
                           <div className="bg-white border border-[#e8e6e0] p-6 rounded mb-6">
                               <h4 className="text-[#e8521a] font-bold mb-4 flex items-center gap-2"><Shield className="w-4 h-4"/> SECURITY VENDOR DETECTIONS</h4>
+=======
+                          <div className="bg-cyber-900 border border-cyber-700 p-6 rounded mb-6">
+                              <h4 className="text-cyber-accent font-bold mb-4 flex items-center gap-2"><Shield className="w-4 h-4"/> SECURITY VENDOR DETECTIONS</h4>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                                   {Object.entries(domainIntel.raw_data.data.attributes.last_analysis_results)
                                       .filter(([_, result]: any) => result.category === 'malicious' || result.category === 'suspicious')
                                       .map(([vendor, result]: any) => (
+<<<<<<< HEAD
                                           <div key={vendor} className="flex items-center justify-between p-3 bg-[#fef2f2] border border-[#fecaca] rounded">
                                               <div className="flex flex-col">
                                                   <span className="text-xs font-bold text-[#111]">{vendor}</span>
                                                   <span className="text-[10px] text-[#dc2626] uppercase">{result.result || result.category}</span>
                                               </div>
                                               <AlertTriangle className="w-4 h-4 text-[#dc2626] opacity-50" />
+=======
+                                          <div key={vendor} className="flex items-center justify-between p-3 bg-cyber-danger/5 border border-cyber-danger/20 rounded">
+                                              <div className="flex flex-col">
+                                                  <span className="text-xs font-bold text-white">{vendor}</span>
+                                                  <span className="text-[10px] text-cyber-danger uppercase">{result.result || result.category}</span>
+                                              </div>
+                                              <AlertTriangle className="w-4 h-4 text-cyber-danger opacity-50" />
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                           </div>
                                       ))
                                   }
                                   {Object.entries(domainIntel.raw_data.data.attributes.last_analysis_results)
                                       .filter(([_, result]: any) => result.category === 'malicious' || result.category === 'suspicious')
                                       .length === 0 && (
+<<<<<<< HEAD
                                           <div className="col-span-full py-4 text-center bg-[#f0fdf4] border border-[#bbf7d0] rounded">
                                               <CheckCircle className="w-6 h-6 text-[#16a34a] mx-auto mb-2 opacity-50" />
                                               <p className="text-xs text-[#16a34a] font-bold uppercase tracking-widest">No malicious detections from 70+ vendors</p>
+=======
+                                          <div className="col-span-full py-4 text-center bg-cyber-success/5 border border-cyber-success/20 rounded">
+                                              <CheckCircle className="w-6 h-6 text-cyber-success mx-auto mb-2 opacity-50" />
+                                              <p className="text-xs text-cyber-success font-bold uppercase tracking-widest">No malicious detections from 70+ vendors</p>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                           </div>
                                       )
                                   }
@@ -647,10 +974,17 @@ export const LeakMonitor: React.FC = () => {
                      {domainIntel && (
                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full items-stretch">
                             {/* DNS Records */}
+<<<<<<< HEAD
                             <div className="bg-white border border-[#e8e6e0] p-6 rounded flex flex-col h-full">
                                  <div className="mb-4">
                                      <h4 className="text-[#e8521a] font-bold flex items-center gap-2"><Server className="w-4 h-4"/> DNS INFRASTRUCTURE</h4>
                                     <p className="text-xs text-[#666] mt-2 leading-relaxed">
+=======
+                            <div className="bg-cyber-900 border border-cyber-700 p-6 rounded flex flex-col h-full">
+                                 <div className="mb-4">
+                                     <h4 className="text-cyber-accent font-bold flex items-center gap-2"><Server className="w-4 h-4"/> DNS INFRASTRUCTURE</h4>
+                                    <p className="text-xs text-cyber-400 mt-2 leading-relaxed">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                         The phonebook of the internet. These records define where traffic (web, email) is routed for this domain.
                                     </p>
                                 </div>
@@ -658,7 +992,11 @@ export const LeakMonitor: React.FC = () => {
                                 <div className="flex-1 overflow-y-auto custom-scrollbar space-y-3 max-h-[400px] pr-2">
                                     {domainIntel.last_dns_records && domainIntel.last_dns_records.length > 0 ? (
                                         domainIntel.last_dns_records.map((rec: any, i: number) => (
+<<<<<<< HEAD
                                             <div key={i} className="group flex flex-col bg-[#f5f5f0]/50 p-3 rounded border border-[#f0efe8] hover:border-[#fbd5c0] hover:bg-[#f8f7f4] transition-all duration-300">
+=======
+                                            <div key={i} className="group flex flex-col bg-cyber-950/50 p-3 rounded border border-cyber-800 hover:border-cyber-accent/50 hover:bg-cyber-900/50 transition-all duration-300">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                                 <div className="flex justify-between items-start mb-2">
                                                     <div className="flex flex-col gap-1">
                                                         <div className="flex items-center gap-2">
@@ -667,6 +1005,7 @@ export const LeakMonitor: React.FC = () => {
                                                                 rec.type === 'MX' ? 'bg-purple-900/30 text-purple-400 border-purple-800' :
                                                                 rec.type === 'TXT' ? 'bg-yellow-900/30 text-yellow-400 border-yellow-800' :
                                                                 rec.type === 'NS' ? 'bg-green-900/30 text-green-400 border-green-800' :
+<<<<<<< HEAD
                                                                 'bg-[#f5f5f0] text-[#333] border-[#d4d0c8]'
                                                             }`}>
                                                                 {rec.type}
@@ -682,12 +1021,33 @@ export const LeakMonitor: React.FC = () => {
                                                     <span className="text-[10px] text-[#aaa] font-mono bg-white px-1.5 py-0.5 rounded border border-[#f0efe8]">TTL: {rec.ttl}s</span>
                                                 </div>
                                                 <div className="font-mono text-xs text-[#444] break-all pl-3 border-l-2 border-[#f0efe8] group-hover:border-[#e8521a] ml-1 transition-colors py-1 bg-white/30 rounded-r">
+=======
+                                                                'bg-cyber-800 text-cyber-300 border-cyber-600'
+                                                            }`}>
+                                                                {rec.type}
+                                                            </span>
+                                                            <span className="text-[10px] text-cyber-500 uppercase tracking-wider font-bold">
+                                                                {getDnsDescription(rec.type).split(' (')[0]}
+                                                            </span>
+                                                        </div>
+                                                        <span className="text-[9px] text-cyber-600 italic pl-1">
+                                                            {getDnsDescription(rec.type).includes('(') ? getDnsDescription(rec.type).split('(')[1].replace(')', '') : ''}
+                                                        </span>
+                                                    </div>
+                                                    <span className="text-[10px] text-cyber-600 font-mono bg-cyber-900 px-1.5 py-0.5 rounded border border-cyber-800">TTL: {rec.ttl}s</span>
+                                                </div>
+                                                <div className="font-mono text-xs text-cyber-200 break-all pl-3 border-l-2 border-cyber-800 group-hover:border-cyber-accent ml-1 transition-colors py-1 bg-cyber-900/30 rounded-r">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                                     {rec.value}
                                                 </div>
                                             </div>
                                         ))
                                     ) : (
+<<<<<<< HEAD
                                         <div className="flex flex-col items-center justify-center h-32 text-[#888] bg-[#f5f5f0]/30 rounded border border-dashed border-[#f0efe8]">
+=======
+                                        <div className="flex flex-col items-center justify-center h-32 text-cyber-500 bg-cyber-950/30 rounded border border-dashed border-cyber-800">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                             <Server className="w-8 h-8 mb-2 opacity-20" />
                                             <span className="text-xs">No DNS records exposed via API</span>
                                         </div>
@@ -698,24 +1058,39 @@ export const LeakMonitor: React.FC = () => {
                             {/* Whois & Popularity */}
                             <div className="flex flex-col gap-6">
                                 {/* Popularity */}
+<<<<<<< HEAD
                                 <div className="bg-white border border-[#e8e6e0] p-6 rounded">
                                     <div className="flex justify-between items-center mb-4">
                                         <h4 className="text-[#e8521a] font-bold flex items-center gap-2"><Activity className="w-4 h-4"/> POPULARITY LEADERBOARD</h4>
                                         <div className="px-2 py-0.5 bg-[#fff4ee] border border-[#fbd5c0] rounded text-[10px] text-[#e8521a] font-bold uppercase tracking-widest">Global Traffic</div>
                                     </div>
                                     <p className="text-xs text-[#666] mb-6 leading-relaxed">
+=======
+                                <div className="bg-cyber-900 border border-cyber-700 p-6 rounded">
+                                    <div className="flex justify-between items-center mb-4">
+                                        <h4 className="text-cyber-accent font-bold flex items-center gap-2"><Activity className="w-4 h-4"/> POPULARITY LEADERBOARD</h4>
+                                        <div className="px-2 py-0.5 bg-cyber-accent/10 border border-cyber-accent/30 rounded text-[10px] text-cyber-accent font-bold uppercase tracking-widest">Global Traffic</div>
+                                    </div>
+                                    <p className="text-xs text-cyber-400 mb-6 leading-relaxed">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                         These metrics represent the domain's global footprint. A lower rank indicates a more massive user base and higher trust/visibility.
                                     </p>
                                     {domainIntel.popularity_ranks && Object.keys(domainIntel.popularity_ranks).length > 0 ? (
                                         <div className="space-y-3">
                                             {Object.entries(domainIntel.popularity_ranks).map(([source, data]: any, idx) => (
+<<<<<<< HEAD
                                                 <div key={source} className="group bg-[#f5f5f0] p-4 rounded border border-[#f0efe8] flex items-center gap-4 relative overflow-hidden hover:border-[#fbd5c0] transition-all">
                                                      <div className="flex items-center justify-center w-8 h-8 rounded bg-white border border-[#e8e6e0] text-[#e8521a] font-mono font-bold text-sm">
+=======
+                                                <div key={source} className="group bg-cyber-950 p-4 rounded border border-cyber-800 flex items-center gap-4 relative overflow-hidden hover:border-cyber-accent/50 transition-all">
+                                                     <div className="flex items-center justify-center w-8 h-8 rounded bg-cyber-900 border border-cyber-700 text-cyber-accent font-mono font-bold text-sm">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                                         {idx + 1}
                                                      </div>
                                                      <div className="flex-1">
                                                         <div className="flex justify-between items-end">
                                                             <div>
+<<<<<<< HEAD
                                                                 <span className="text-[10px] text-[#888] uppercase font-bold block">{source}</span>
                                                                 <span className="text-lg font-mono font-bold text-[#111] leading-none">#{data.rank.toLocaleString()}</span>
                                                             </div>
@@ -724,6 +1099,16 @@ export const LeakMonitor: React.FC = () => {
                                                                 <div className="h-1.5 w-24 bg-white rounded-full overflow-hidden border border-[#f0efe8]">
                                                                     <div 
                                                                         className="h-full bg-[#e8521a]" 
+=======
+                                                                <span className="text-[10px] text-cyber-500 uppercase font-bold block">{source}</span>
+                                                                <span className="text-lg font-mono font-bold text-white leading-none">#{data.rank.toLocaleString()}</span>
+                                                            </div>
+                                                            <div className="text-right">
+                                                                <div className="text-[9px] text-cyber-600 uppercase mb-1">Traffic Percentile</div>
+                                                                <div className="h-1.5 w-24 bg-cyber-900 rounded-full overflow-hidden border border-cyber-800">
+                                                                    <div 
+                                                                        className="h-full bg-cyber-accent" 
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                                                         style={{ width: `${Math.max(5, Math.min(95, 100 - (data.rank / 1000000 * 100)))}%` }}
                                                                     ></div>
                                                                 </div>
@@ -731,18 +1116,27 @@ export const LeakMonitor: React.FC = () => {
                                                         </div>
                                                      </div>
                                                      {/* Decorative bg element */}
+<<<<<<< HEAD
                                                      <div className="absolute right-0 top-0 h-full w-1 bg-[#e8521a] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+=======
+                                                     <div className="absolute right-0 top-0 h-full w-1 bg-cyber-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                                 </div>
                                             ))}
                                         </div>
                                     ) : (
+<<<<<<< HEAD
                                         <div className="bg-[#f5f5f0]/30 rounded border border-dashed border-[#f0efe8] p-4 text-center text-xs text-[#888]">
+=======
+                                        <div className="bg-cyber-950/30 rounded border border-dashed border-cyber-800 p-4 text-center text-xs text-cyber-500">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                             No popularity metrics available for this domain.
                                         </div>
                                     )}
                                 </div>
 
                                 {/* WHOIS */}
+<<<<<<< HEAD
                                 <div className="bg-white border border-[#e8e6e0] p-6 rounded flex-1 flex flex-col">
                                     <div className="flex justify-between items-center mb-3">
                                         <h4 className="text-[#e8521a] font-bold flex items-center gap-2"><FileText className="w-4 h-4"/> WHOIS TERMINAL</h4>
@@ -754,16 +1148,34 @@ export const LeakMonitor: React.FC = () => {
                                     <div className="flex-1 relative group min-h-[250px]">
                                         <div className="absolute inset-0 bg-[#0f1929] rounded border border-[#e8e6e0] shadow-lg"></div>
                                         <div className="absolute top-0 left-0 right-0 h-7 bg-[#f5f5f0] rounded-t border-b border-[#e8e6e0] flex items-center px-3 gap-2">
+=======
+                                <div className="bg-cyber-900 border border-cyber-700 p-6 rounded flex-1 flex flex-col">
+                                    <div className="flex justify-between items-center mb-3">
+                                        <h4 className="text-cyber-accent font-bold flex items-center gap-2"><FileText className="w-4 h-4"/> WHOIS TERMINAL</h4>
+                                        <span className="text-[10px] text-cyber-500 font-mono bg-black px-2 py-0.5 rounded border border-cyber-800">v1.0.4-stable</span>
+                                    </div>
+                                    <p className="text-xs text-cyber-400 mb-4 leading-relaxed">
+                                        Registration metadata used to identify the entity controlling the domain and its technical contacts.
+                                    </p>
+                                    <div className="flex-1 relative group min-h-[250px]">
+                                        <div className="absolute inset-0 bg-black rounded border border-cyber-700 shadow-2xl shadow-black/50"></div>
+                                        <div className="absolute top-0 left-0 right-0 h-7 bg-cyber-800 rounded-t border-b border-cyber-700 flex items-center px-3 gap-2">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                             <div className="flex gap-1.5">
                                                 <div className="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>
                                                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></div>
                                                 <div className="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
                                             </div>
+<<<<<<< HEAD
                                             <div className="mx-auto text-[10px] text-[#666] font-mono tracking-wider flex items-center gap-2">
+=======
+                                            <div className="mx-auto text-[10px] text-cyber-400 font-mono tracking-wider flex items-center gap-2">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                                 <Globe className="w-3 h-3" /> query://whois.{domain}
                                             </div>
                                             <div className="w-10"></div> {/* Spacer */}
                                         </div>
+<<<<<<< HEAD
                                         <div className="absolute top-7 bottom-0 left-0 right-0 p-4 overflow-y-auto custom-scrollbar font-mono text-[11px] text-[#e8521a] whitespace-pre-wrap leading-relaxed selection:bg-[#e8521a] selection:text-black">
                                              <span className="text-[#888]">$ whois {domain}</span>
                                              <br />
@@ -774,6 +1186,18 @@ export const LeakMonitor: React.FC = () => {
                                              {domainIntel.whois ? domainIntel.whois : <span className="text-[#aaa] italic">// No WHOIS data available in summary.</span>}
                                              <br />
                                              <span className="text-[#888] animate-pulse">_</span>
+=======
+                                        <div className="absolute top-7 bottom-0 left-0 right-0 p-4 overflow-y-auto custom-scrollbar font-mono text-[11px] text-cyber-accent/80 whitespace-pre-wrap leading-relaxed selection:bg-cyber-accent selection:text-black">
+                                             <span className="text-cyber-500">$ whois {domain}</span>
+                                             <br />
+                                             <span className="text-cyber-success/70">[SYSTEM] Connection established...</span>
+                                             <br />
+                                             <span className="text-cyber-success/70">[SYSTEM] Fetching registration data...</span>
+                                             <br /><br />
+                                             {domainIntel.whois ? domainIntel.whois : <span className="text-cyber-600 italic">// No WHOIS data available in summary.</span>}
+                                             <br />
+                                             <span className="text-cyber-500 animate-pulse">_</span>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                         </div>
                                     </div>
                                 </div>
@@ -784,6 +1208,7 @@ export const LeakMonitor: React.FC = () => {
                      {/* 3. Hunter Company Info & Employees */}
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                          {hunterDomain && (
+<<<<<<< HEAD
                              <div className="bg-white border border-[#e8e6e0] p-6 rounded">
                                  <h4 className="text-[#e8521a] font-bold mb-4 flex items-center gap-2"><Building className="w-4 h-4"/> COMPANY INTEL</h4>
                                  <div className="space-y-4 text-sm">
@@ -807,6 +1232,31 @@ export const LeakMonitor: React.FC = () => {
                                              <div className="flex flex-wrap gap-1">
                                                 {hunterDomain.technologies.map(tech => (
                                                     <span key={tech} className="text-[10px] px-2 py-0.5 bg-[#f5f5f0] border border-[#f0efe8] rounded text-[#333]">{tech}</span>
+=======
+                             <div className="bg-cyber-900 border border-cyber-700 p-6 rounded">
+                                 <h4 className="text-cyber-accent font-bold mb-4 flex items-center gap-2"><Building className="w-4 h-4"/> COMPANY INTEL</h4>
+                                 <div className="space-y-4 text-sm">
+                                     <div>
+                                         <label className="text-cyber-500 text-xs uppercase block">Organization</label>
+                                         <span className="text-white text-lg font-bold">{hunterDomain.organization}</span>
+                                     </div>
+                                     <div className="grid grid-cols-2 gap-4">
+                                         <div><label className="text-cyber-500 text-xs uppercase block"><MapPin className="w-3 h-3 inline"/> Location</label><span className="text-cyber-200">{hunterDomain.state ? `${hunterDomain.state}, ` : ''}{hunterDomain.country}</span></div>
+                                         <div><label className="text-cyber-500 text-xs uppercase block">Email Pattern</label><span className="text-cyber-accent font-mono">{hunterDomain.pattern}</span></div>
+                                     </div>
+                                     <p className="text-cyber-300 text-xs leading-relaxed">{hunterDomain.description}</p>
+                                     <div className="flex gap-4 pt-2 border-t border-cyber-800">
+                                         {hunterDomain.linkedin && <a href={hunterDomain.linkedin} target="_blank" rel="noreferrer" className="text-cyber-400 hover:text-white"><Linkedin className="w-4 h-4" /></a>}
+                                         {hunterDomain.twitter && <a href={hunterDomain.twitter} target="_blank" rel="noreferrer" className="text-cyber-400 hover:text-white"><Twitter className="w-4 h-4" /></a>}
+                                         {hunterDomain.facebook && <a href={hunterDomain.facebook} target="_blank" rel="noreferrer" className="text-cyber-400 hover:text-white"><Facebook className="w-4 h-4" /></a>}
+                                     </div>
+                                      {hunterDomain.technologies && hunterDomain.technologies.length > 0 && (
+                                         <div className="pt-2">
+                                             <label className="text-cyber-500 text-xs uppercase block mb-1">Tech Stack</label>
+                                             <div className="flex flex-wrap gap-1">
+                                                {hunterDomain.technologies.map(tech => (
+                                                    <span key={tech} className="text-[10px] px-2 py-0.5 bg-cyber-950 border border-cyber-800 rounded text-cyber-300">{tech}</span>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                                 ))}
                                              </div>
                                          </div>
@@ -816,6 +1266,7 @@ export const LeakMonitor: React.FC = () => {
                          )}
 
                          {hunterDomain && (
+<<<<<<< HEAD
                             <div className="bg-white border border-[#e8e6e0] p-6 rounded h-full">
                                 <h4 className="text-[#e8521a] font-bold mb-4 flex items-center gap-2"><Briefcase className="w-4 h-4"/> IDENTIFIED EMPLOYEES</h4>
                                 {hunterDomain.emails.length > 0 ? (
@@ -832,11 +1283,33 @@ export const LeakMonitor: React.FC = () => {
                                                 <div className="text-right">
                                                     <div className="text-xs text-[#e8521a] font-mono mb-1">{e.value}</div>
                                                     <span className={`text-[10px] uppercase px-1.5 py-0.5 rounded border ${e.type === 'personal' ? 'border-[#16a34a] text-[#16a34a]' : 'border-[#999] text-[#888]'}`}>{e.type}</span>
+=======
+                            <div className="bg-cyber-900 border border-cyber-700 p-6 rounded h-full">
+                                <h4 className="text-cyber-accent font-bold mb-4 flex items-center gap-2"><Briefcase className="w-4 h-4"/> IDENTIFIED EMPLOYEES</h4>
+                                {hunterDomain.emails.length > 0 ? (
+                                    <div className="space-y-3 max-h-[300px] overflow-y-auto custom-scrollbar pr-2">
+                                        {hunterDomain.emails.map((e, idx) => (
+                                            <div key={idx} className="flex justify-between items-start p-3 bg-cyber-800/50 rounded border border-cyber-800 hover:border-cyber-600 transition-colors">
+                                                <div>
+                                                    <div className="font-bold text-white text-sm">{e.first_name} {e.last_name}</div>
+                                                    <div className="text-xs text-cyber-400 mb-1">{e.position || 'Employee'}</div>
+                                                    <div className="flex gap-2">
+                                                        {e.linkedin && <a href={e.linkedin} target="_blank" rel="noreferrer" className="text-cyber-500 hover:text-cyber-300"><Linkedin className="w-3 h-3" /></a>}
+                                                    </div>
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-xs text-cyber-accent font-mono mb-1">{e.value}</div>
+                                                    <span className={`text-[10px] uppercase px-1.5 py-0.5 rounded border ${e.type === 'personal' ? 'border-cyber-success text-cyber-success' : 'border-cyber-500 text-cyber-500'}`}>{e.type}</span>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
+<<<<<<< HEAD
                                 ) : <p className="text-[#666] text-sm">No public email patterns found.</p>}
+=======
+                                ) : <p className="text-cyber-400 text-sm">No public email patterns found.</p>}
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                             </div>
                          )}
                      </div>
@@ -844,11 +1317,19 @@ export const LeakMonitor: React.FC = () => {
                      {/* Raw VT Data Toggle */}
                      {domainIntel && domainIntel.raw_data && (
                          <div className="text-center">
+<<<<<<< HEAD
                              <button onClick={() => setShowRawVt(!showRawVt)} className="text-[#888] text-xs hover:text-[#333] underline">
                                  {showRawVt ? 'Hide Raw VirusTotal Data' : 'View Full VirusTotal JSON Response'}
                              </button>
                              {showRawVt && (
                                  <div className="mt-4 p-4 bg-[#0f1929] border border-[#f0efe8] rounded text-left overflow-auto max-h-96 text-xs font-mono text-[#333]">
+=======
+                             <button onClick={() => setShowRawVt(!showRawVt)} className="text-cyber-500 text-xs hover:text-cyber-300 underline">
+                                 {showRawVt ? 'Hide Raw VirusTotal Data' : 'View Full VirusTotal JSON Response'}
+                             </button>
+                             {showRawVt && (
+                                 <div className="mt-4 p-4 bg-black border border-cyber-800 rounded text-left overflow-auto max-h-96 text-xs font-mono text-cyber-300">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                                      <pre>{JSON.stringify(domainIntel.raw_data, null, 2)}</pre>
                                  </div>
                              )}
@@ -862,8 +1343,13 @@ export const LeakMonitor: React.FC = () => {
           {/* SOCIAL OSINT TAB */}
           {activeTab === 'social' && (
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+<<<<<<< HEAD
               <div className="bg-[#f8f7f4] border border-[#e8e6e0] rounded p-4 mb-6 text-sm text-[#333]">
                 <Share2 className="inline w-4 h-4 mr-2 text-[#e8521a]" />
+=======
+              <div className="bg-cyber-900/50 border border-cyber-700 rounded p-4 mb-6 text-sm text-cyber-300">
+                <Share2 className="inline w-4 h-4 mr-2 text-cyber-accent" />
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                 Maigret-style Social Media Intelligence. Track usernames across 500+ platforms and find associated digital footprints.
               </div>
               <form onSubmit={handleSocialSearch} className="flex flex-col md:flex-row gap-4 mb-8">
@@ -872,19 +1358,31 @@ export const LeakMonitor: React.FC = () => {
                   value={socialUsername} 
                   onChange={(e) => setSocialUsername(e.target.value)} 
                   placeholder="Target Username (e.g. john_doe)" 
+<<<<<<< HEAD
                   className="flex-1 bg-[#f5f5f0] border border-[#e8e6e0] rounded-xl px-4 py-2.5 text-[#111] placeholder-[#bbb] focus:border-[#e8521a] focus:outline-none focus:bg-white transition-all text-sm" 
+=======
+                  className="flex-1 bg-cyber-900 border border-cyber-700 rounded px-4 py-2 text-white focus:border-cyber-accent focus:outline-none" 
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                 />
                 <input 
                   type="email" 
                   value={socialEmail} 
                   onChange={(e) => setSocialEmail(e.target.value)} 
                   placeholder="Associated Email (Optional)" 
+<<<<<<< HEAD
                   className="flex-1 bg-[#f5f5f0] border border-[#e8e6e0] rounded-xl px-4 py-2.5 text-[#111] placeholder-[#bbb] focus:border-[#e8521a] focus:outline-none focus:bg-white transition-all text-sm" 
+=======
+                  className="flex-1 bg-cyber-900 border border-cyber-700 rounded px-4 py-2 text-white focus:border-cyber-accent focus:outline-none" 
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                 />
                 <button 
                   type="submit" 
                   disabled={socialLoading} 
+<<<<<<< HEAD
                   className="bg-[#e8521a] hover:bg-[#c73f0a] text-[#111] px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50 whitespace-nowrap"
+=======
+                  className="bg-cyber-600 hover:bg-cyber-500 text-white px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50 whitespace-nowrap"
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                 >
                   {socialLoading ? (
                     <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
@@ -896,6 +1394,7 @@ export const LeakMonitor: React.FC = () => {
               </form>
 
               {socialIntel && (
+<<<<<<< HEAD
                 <div className="bg-white border border-[#e8e6e0] rounded-lg p-6 shadow-inner">
                   <div className="flex justify-between items-center mb-4 border-b border-[#f0efe8] pb-4">
                     <h3 className="text-lg font-bold text-[#e8521a] flex items-center gap-2">
@@ -907,12 +1406,30 @@ export const LeakMonitor: React.FC = () => {
                     </div>
                   </div>
                   <div className="prose prose-invert max-w-none text-[#444] text-sm leading-relaxed markdown-body">
+=======
+                <div className="bg-cyber-900 border border-cyber-700 rounded-lg p-6 shadow-inner">
+                  <div className="flex justify-between items-center mb-4 border-b border-cyber-800 pb-4">
+                    <h3 className="text-lg font-bold text-cyber-accent flex items-center gap-2">
+                      <Shield className="w-5 h-5" />
+                      TACTICAL INTELLIGENCE REPORT
+                    </h3>
+                    <div className="text-[10px] font-mono text-cyber-500 uppercase tracking-widest">
+                      Source: Gemini OSINT Engine
+                    </div>
+                  </div>
+                  <div className="prose prose-invert max-w-none text-cyber-200 text-sm leading-relaxed markdown-body">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                     <ReactMarkdown>{socialIntel.text}</ReactMarkdown>
                   </div>
                   
                   {socialIntel.groundingMetadata?.groundingChunks && (
+<<<<<<< HEAD
                     <div className="mt-8 pt-6 border-t border-[#f0efe8]">
                       <h4 className="text-xs font-bold text-[#666] uppercase tracking-widest mb-4">Verified Sources & Grounding</h4>
+=======
+                    <div className="mt-8 pt-6 border-t border-cyber-800">
+                      <h4 className="text-xs font-bold text-cyber-400 uppercase tracking-widest mb-4">Verified Sources & Grounding</h4>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {socialIntel.groundingMetadata.groundingChunks.map((chunk: any, idx: number) => (
                           chunk.web && (
@@ -921,12 +1438,21 @@ export const LeakMonitor: React.FC = () => {
                               href={chunk.web.uri} 
                               target="_blank" 
                               rel="noopener noreferrer"
+<<<<<<< HEAD
                               className="flex items-center gap-3 p-3 bg-[#f8f7f4] border border-[#e8e6e0] rounded hover:border-[#fbd5c0] transition-all group"
                             >
                               <Globe className="w-4 h-4 text-[#e8521a] group-hover:scale-110 transition-transform" />
                               <div className="flex-1 min-w-0">
                                 <div className="text-xs font-bold text-[#111] truncate">{chunk.web.title}</div>
                                 <div className="text-[10px] text-[#888] truncate">{chunk.web.uri}</div>
+=======
+                              className="flex items-center gap-3 p-3 bg-cyber-800/50 border border-cyber-700 rounded hover:border-cyber-accent/50 transition-all group"
+                            >
+                              <Globe className="w-4 h-4 text-cyber-accent group-hover:scale-110 transition-transform" />
+                              <div className="flex-1 min-w-0">
+                                <div className="text-xs font-bold text-white truncate">{chunk.web.title}</div>
+                                <div className="text-[10px] text-cyber-500 truncate">{chunk.web.uri}</div>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                               </div>
                             </a>
                           )
@@ -942,13 +1468,22 @@ export const LeakMonitor: React.FC = () => {
           {/* PASSWORD TAB */}
           {activeTab === 'password' && (
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+<<<<<<< HEAD
                <div className="bg-[#d97706]/10 border border-[#fde68a] p-4 rounded mb-6 text-sm text-[#d97706] flex items-start gap-3">
+=======
+               <div className="bg-cyber-warning/10 border border-cyber-warning p-4 rounded mb-6 text-sm text-cyber-warning flex items-start gap-3">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                   <Lock className="w-5 h-5 shrink-0" />
                   <p>Security Note: We use k-Anonymity. Your full password is never sent to our servers. Only the first 5 characters of the SHA-1 hash are used to query the HIBP database.</p>
                </div>
                <form onSubmit={handlePasswordCheck} className="flex gap-4 mb-8">
+<<<<<<< HEAD
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter password to check exposure..." className="flex-1 bg-[#f5f5f0] border border-[#e8e6e0] rounded-xl px-4 py-2.5 text-[#111] placeholder-[#bbb] focus:border-[#e8521a] focus:outline-none focus:bg-white transition-all text-sm" />
                 <button type="submit" disabled={pwLoading} className="bg-[#e8521a] hover:bg-[#c73f0a] text-[#111] px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50">
+=======
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter password to check exposure..." className="flex-1 bg-cyber-900 border border-cyber-700 rounded px-4 py-2 text-white focus:border-cyber-accent focus:outline-none" />
+                <button type="submit" disabled={pwLoading} className="bg-cyber-600 hover:bg-cyber-500 text-white px-6 py-2 rounded font-bold flex items-center gap-2 transition-colors disabled:opacity-50">
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                   {pwLoading ? <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div> : <Shield className="w-4 h-4" />}
                   AUDIT PASSWORD
                 </button>
@@ -956,6 +1491,7 @@ export const LeakMonitor: React.FC = () => {
               {leakCount !== null && !pwLoading && (
                  <div className="text-center py-12">
                     {leakCount === 0 ? (
+<<<<<<< HEAD
                         <div className="bg-[#16a34a]/10 border border-[#16a34a] rounded p-8 inline-block max-w-lg">
                            <CheckCircle className="w-16 h-16 text-[#16a34a] mx-auto mb-4" />
                            <h3 className="text-2xl font-bold text-[#111] mb-2">Safe Password</h3>
@@ -967,6 +1503,19 @@ export const LeakMonitor: React.FC = () => {
                            <h3 className="text-2xl font-bold text-[#111] mb-2">Compromised Password</h3>
                            <p className="text-[#444] mb-4">This password has been seen <span className="text-[#dc2626] font-bold text-xl">{leakCount.toLocaleString()}</span> times in data breaches.</p>
                            <p className="text-sm text-[#666]">Do not use this password on any active account.</p>
+=======
+                        <div className="bg-cyber-success/10 border border-cyber-success rounded p-8 inline-block max-w-lg">
+                           <CheckCircle className="w-16 h-16 text-cyber-success mx-auto mb-4" />
+                           <h3 className="text-2xl font-bold text-white mb-2">Safe Password</h3>
+                           <p className="text-cyber-200">This password has not been seen in any known data breaches.</p>
+                        </div>
+                    ) : (
+                        <div className="bg-cyber-danger/10 border border-cyber-danger rounded p-8 inline-block max-w-lg">
+                           <AlertTriangle className="w-16 h-16 text-cyber-danger mx-auto mb-4" />
+                           <h3 className="text-2xl font-bold text-white mb-2">Compromised Password</h3>
+                           <p className="text-cyber-200 mb-4">This password has been seen <span className="text-cyber-danger font-bold text-xl">{leakCount.toLocaleString()}</span> times in data breaches.</p>
+                           <p className="text-sm text-cyber-400">Do not use this password on any active account.</p>
+>>>>>>> 56db3e8247e61c3986066c68fee7e7ea022c0cac
                         </div>
                     )}
                  </div>
